@@ -1,0 +1,26 @@
+Resources:
+  BookingApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: HotelBookingApi
+
+  BookingFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: arn:aws:iam::123456789012:role/lambda-execution-role
+      FunctionName: HotelBookingFunction
+      Runtime: nodejs14.x
+      Timeout: 10
+
+  BookingApiMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      AuthorizationType: NONE
+      HttpMethod: POST
+      ResourceId: !GetAtt BookingApi.RootResourceId
+      RestApiId: !Ref BookingApi
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BookingFunction.Arn}/invocations

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking App</title>
+</head>
+<body>
+
+<h1>Hotel Booking App</h1>
+
+<!-- Search Form -->
+<h2>Search for Hotels</h2>
+<form id="searchForm">
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" required>
+    <button type="button" onclick="searchHotels()">Search</button>
+</form>
+
+<!-- Create Booking Form -->
+<h2>Create Hotel Booking</h2>
+<form id="createBookingForm">
+    <label for="destinationCreate">Destination:</label>
+    <input type="text" id="destinationCreate" name="destinationCreate" required>
+    <label for="days">Number of Days:</label>
+    <input type="number" id="days" name="days" required>
+    <button type="button" onclick="createBooking()">Book Hotel</button>
+</form>
+
+<!-- View Booking Form -->
+<h2>View Booking Details</h2>
+<form id="viewBookingForm">
+    <label for="bookingId">Booking ID:</label>
+    <input type="text" id="bookingId" name="bookingId" required>
+    <button type="button" onclick="viewBookingDetails()">View Details</button>
+</form>
+
+<!-- Display Area for Results -->
+<div id="resultArea"></div>
+
+<script>
+    function searchHotels() {
+        // Add logic to make API request for hotel search
+        // Update resultArea with the search results
+        document.getElementById('resultArea').innerText = "Implement hotel search logic here.";
+    }
+
+    function createBooking() {
+        // Add logic to make API request for creating a booking
+        // Update resultArea with the booking status
+        document.getElementById('resultArea').innerText = "Implement booking creation logic here.";
+    }
+
+    function viewBookingDetails() {
+        // Add logic to make API request for viewing booking details
+        // Update resultArea with the booking details
+        document.getElementById('resultArea').innerText = "Implement view booking details logic here.";
+    }
+</script>
+
+</body>
+</html>
